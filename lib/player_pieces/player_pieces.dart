@@ -15,7 +15,7 @@ class PlayerPiecesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedPositioned(
       curve: Curves.easeInOut,
-      duration: Duration(milliseconds: 0),
+      duration: Duration(milliseconds: 100),
       top: playerPosition.dy,
       left: playerPosition.dx,
       child: Container(

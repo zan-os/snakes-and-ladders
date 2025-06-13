@@ -217,7 +217,7 @@ class _GameBoardWidgetState extends State<GameBoardWidget> {
                     boardTiles[nextPosition].rect,
                   );
                   setState(() {});
-                  await Future.delayed(Duration(milliseconds: 50));
+                  await Future.delayed(Duration(milliseconds: 500));
                 }
 
                 final currentPos = turnManager.currentPlayer.currentPosition;
