@@ -20,6 +20,9 @@ class TurnManager {
   /// Returns true if a player is currently moving.
   bool get isMoving => _isMoving;
 
+  bool _readyForNextMove = true;
+  bool get readyForNextMove => _readyForNextMove;
+
   /// Advances the turn to the next player in the list.
   /// Wraps around to the first player after the last.
   void nextTurn() {
@@ -39,6 +42,10 @@ class TurnManager {
   /// Sets the movement state to false, indicating no player is moving.
   void stopMoving() {
     _isMoving = false;
+  }
+
+  void setReadyForNextMove(bool value) {
+    _readyForNextMove = value;
   }
 
   /// Updates the current player's position and rectangle on the board.
