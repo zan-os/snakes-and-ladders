@@ -156,6 +156,7 @@ class _GameBoardWidgetState extends State<GameBoardWidget> {
               width: 400,
               child: GridView.builder(
                 shrinkWrap: true,
+                reverse: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: crossAxisCount,
                 ),
