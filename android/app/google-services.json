@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "926800777765",
+    "project_id": "snakes-and-ladders-48d0a",
+    "storage_bucket": "snakes-and-ladders-48d0a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926800777765:android:66cff814658a9d76cfe5cc",
+        "android_client_info": {
+          "package_name": "com.example.snakes_and_ladders"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvNoeykDBhRkXFvca9tnEbwF-pnVbad64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

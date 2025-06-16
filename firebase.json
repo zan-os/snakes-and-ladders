@@ -1,0 +1,33 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "snakes-and-ladders-48d0a",
+          "appId": "1:926800777765:android:66cff814658a9d76cfe5cc",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "snakes-and-ladders-48d0a",
+          "configurations": {
+            "android": "1:926800777765:android:66cff814658a9d76cfe5cc",
+            "web": "1:926800777765:web:73ae5b2b0b5151cccfe5cc"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "asia-east1"
+    }
+  }
+}
