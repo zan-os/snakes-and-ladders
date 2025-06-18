@@ -5,11 +5,13 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:snakes_and_ladders/extension/global_key_extensions.dart';
 import 'package:snakes_and_ladders/game_board/model/board_model.dart';
+import 'package:snakes_and_ladders/game_board/model/tile_effect.dart';
 import 'package:snakes_and_ladders/helper/tile_effect_manager.dart';
 import 'package:snakes_and_ladders/helper/turn_manager.dart';
 import 'package:snakes_and_ladders/player_pieces/model/player_model.dart';
 import 'package:snakes_and_ladders/player_pieces/player_pieces.dart';
-import 'package:snakes_and_ladders/special_tiles/special_tiles_painter.dart';
+import 'package:snakes_and_ladders/special_tiles/snake_tile_painter.dart';
+import 'package:snakes_and_ladders/special_tiles/stair_tile_painter.dart';
 
 class GameBoardWidget extends StatefulWidget {
   const GameBoardWidget({super.key});
@@ -47,7 +49,7 @@ class _GameBoardWidgetState extends State<GameBoardWidget> {
       boardSize: tileTotal,
       snakeCount: 4,
       ladderCount: 4,
-      minDistance: 5,
+      minDistance: 6,
     );
 
     // Trigger a rebuild to ensure the board model is ready
@@ -170,7 +172,7 @@ class _GameBoardWidgetState extends State<GameBoardWidget> {
                       border: Border.all(color: Colors.black38),
                     ),
                     child: Align(
-                      alignment: Alignment.topLeft,
+                      alignment: Alignment.topRight,
                       child: Text(
                         (tile.pos + 1).toString(),
                         style: TextStyle(fontSize: 11),
@@ -279,11 +281,19 @@ class _GameBoardWidgetState extends State<GameBoardWidget> {
         ...specialTileManager.tileEffects.map(
           (specialTiles) => CustomPaint(
             size: Size(100, 100),
-            painter: SpecialTilesPainter(
-              start: boardTiles[specialTiles.from - 1].rect.center,
-              end: boardTiles[specialTiles.to - 1].rect.center,
-              tileType: specialTiles.type,
-            ),
+            painter: switch (specialTiles.type) {
+              TileEffectType.snake => SnakeTilePainter(
+                start: boardTiles[specialTiles.from - 1].rect.center,
+                end: boardTiles[specialTiles.to - 1].rect.center,
+                tileType: specialTiles.type,
+              ),
+
+              TileEffectType.ladder => LadderTilePainter(
+                start: boardTiles[specialTiles.from - 1].rect.center,
+                end: boardTiles[specialTiles.to - 1].rect.center,
+                tileType: specialTiles.type,
+              ),
+            },
           ),
         ),
 
